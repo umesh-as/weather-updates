@@ -43,42 +43,46 @@ function App() {
   };
 
   return (
-    <main>
-      <div className="main-heading">
-        <h1>Weather Updates</h1>
-      </div>
-
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Enter location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)} // Update location state as the user types
-        />
-        <button onClick={getWeatherDetails} type="button">
-          Search
-        </button>
-      </div>
-
-      <div id="api">
-        {error && <h2>{error}</h2>} {/* Show error message if there's any */}
-        {weatherData && (
-          <>
-            <h1>{weatherData.name}</h1> {/* Display location name */}
-            <h2>{weatherData.main.temp}°C</h2> {/* Display temperature */}
-            <h3>{weatherData.weather[0].description}</h3> {/* Display weather description */}
-            <div className="weather-details">
-              <p>Humidity: {weatherData.main.humidity}%</p> {/* Display humidity */}
-              <p>Wind Speed: {weatherData.wind.speed} m/s</p> {/* Display wind speed */}
-              <p>Pressure: {weatherData.main.pressure} hPa</p> {/* Display pressure */}
-              <p>Feels Like: {weatherData.main.feels_like}°C</p> {/* Display feels like temperature */}
-              <p>Sunrise: {convertToTime(weatherData.sys.sunrise)}</p> {/* Display sunrise time */}
-              <p>Sunset: {convertToTime(weatherData.sys.sunset)}</p> {/* Display sunset time */}
-            </div>
-          </>
-        )}
-      </div>
-    </main>
+   
+      <main>
+        <div className="main-heading">
+          <h1>Weather Updates</h1>
+        </div>
+  
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Enter location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)} // Update location state as the user types
+          />
+          <button onClick={getWeatherDetails} type="button">
+            Search
+          </button>
+          
+        </div>
+        
+  
+        <div id="api">
+          {error && <h2>{error}</h2>} {/* Show error message if there's any */}
+          {weatherData && (
+            <>
+              <h1>{weatherData.name}</h1> {/* Display location name */}
+              <h2>{weatherData.main.temp}°C</h2> {/* Display temperature */}
+              <h3>{weatherData.weather[0].description}</h3> {/* Display weather description */}
+              <div className="weather-details">
+                <p>Humidity: {weatherData.main.humidity}%</p> {/* Display humidity */}
+                <p>Wind Speed: {weatherData.wind.speed} m/s</p> {/* Display wind speed */}
+                <p>Pressure: {weatherData.main.pressure} hPa</p> {/* Display pressure */}
+                <p>Feels Like: {weatherData.main.feels_like}°C</p> {/* Display feels like temperature */}
+                <p>Sunrise: {convertToTime(weatherData.sys.sunrise)}</p> {/* Display sunrise time */}
+                <p>Sunset: {convertToTime(weatherData.sys.sunset)}</p> {/* Display sunset time */}
+              </div>
+            </>
+          )}
+        </div>
+      </main>
+   
   );
 }
 

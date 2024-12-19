@@ -1,0 +1,218 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  background-image: url('/images/weather.jpg'); /* Ensure path is correct */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.main-heading h1 {
+  font-size: 60px;
+  color: rgb(36, 67, 67);
+  text-align: center;
+  mix-blend-mode: overlay;
+  margin-bottom: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 250px;
+}
+
+.search button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgba(23, 65, 65, 0.8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: rgb(0, 249, 249);
+}
+
+#api {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: rgba(254, 255, 255, 0.7);
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  color: #2d1111;
+  mix-blend-mode: overlay;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#api:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+#api h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+#api h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  font-weight: lighter;
+}
+
+#api h2:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+
+/* Mobile (Small Screens) */
+@media (max-width: 480px) {
+  .main-heading h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+
+  .search input {
+      width: 180px;
+      padding: 8px;
+  }
+
+  .search button {
+      padding: 8px 15px;
+  }
+
+  #api {
+      width: 90%;
+  }
+
+  #api h1 {
+      font-size: 28px;
+  }
+
+  #api h2 {
+      font-size: 18px;
+  }
+}
+
+/* Tablet (Medium Screens) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-heading h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+  }
+
+  .search input {
+      width: 220px;
+      padding: 10px;
+  }
+
+  .search button {
+      padding: 10px 18px;
+  }
+
+  #api {
+      width: 80%;
+  }
+
+  #api h1 {
+      font-size: 26px;
+  }
+
+  #api h2 {
+      font-size: 20px;
+  }
+}
+
+/* Laptop (Large Screens) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-heading h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+  }
+
+  .search input {
+      width: 250px;
+  }
+
+  .search button {
+      padding: 10px 20px;
+  }
+
+  #api {
+      width: 350px;
+  }
+
+  #api h1 {
+      font-size: 28px;
+  }
+
+  #api h2 {
+      font-size: 22px;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1025px) {
+  .main-heading h1 {
+      font-size: 70px;
+  }
+
+  .search input {
+      width: 300px;
+  }
+
+  .search button {
+      padding: 12px 25px;
+  }
+
+  #api {
+      width: 400px;
+  }
+
+  #api h1 {
+      font-size: 30px;
+  }
+
+  #api h2 {
+      font-size: 24px;
+  }
+}
